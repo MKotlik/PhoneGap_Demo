@@ -40,3 +40,6 @@ function accelerometerError() {
 }
 
 getInfoButton.addEventListener("click", vibrateOnClick, false);
+accelBox.addEventListener("click", getMotion, false);
+
+setInterval(getMotion, 1000);

@@ -25,23 +25,28 @@ function vibrateOnClick(e) {
     infoBox.style.backgroundColor = "#C6DEA6";
 }
 
-function getMotion() {
-    accelBox.innerHTML = "stage 1";
-    navigator.accelerometer.getCurrentAcceleration(getAccelerometer, accelerometerError);
-}
-
 function getAccelerometer(acceleration) {
     accelBox.innerHTML = "stage 2";
     var innerText = "X: " + acceleration.x + "<br/>Y: " + acceleration.y;
     innerText += "<br/>Z: " + acceleration.z + "<br/>Timestamp: " + acceleration.timestamp;
     accelBox.innerHTML = innerText;
+    infoBox.style.backgroundColor = "#C6DEA6";
 }
 
 function accelerometerError() {
     accelBox.innerHTML = "Couldn't get position data";
 }
 
-getInfoButton.addEventListener("click", vibrateOnClick, false);
-accelBox.addEventListener("click", getMotion, false);
+var accelWatcId = navigator.accelerometer.watchAcceleration(getAccelerometer, accelerometerError, {frequency: 1000});
+
+/*
+function getMotion() {
+    accelBox.innerHTML = "stage 1";
+    navigator.accelerometer.getCurrentAcceleration(getAccelerometer, accelerometerError);
+}
 
 setInterval(getMotion, 1000);
+*/
+
+getInfoButton.addEventListener("click", vibrateOnClick, false);
+//accelBox.addEventListener("click", getMotion, false);

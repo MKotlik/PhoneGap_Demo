@@ -1,5 +1,6 @@
 var getInfoButton = document.getElementById("get-info");
 var infoBox = document.getElementById("info-box");
+var accelBox = document.getElementById("accel-info");
 
 /* var serverButton = document.createElement("button");
 serverButton.setAttribute("type", "button");
@@ -17,11 +18,25 @@ function vibrateOnClick(e) {
     var manufacturer = device.manufacturer;
     var version = device.version;
 
-    infoStr = "Model: " + model + "<br/>Platform: " + platform + "<br/>Manufacturer: ";
+    var infoStr = "Model: " + model + "<br/>Platform: " + platform + "<br/>Manufacturer: ";
     infoStr += manufacturer + "<br/>Version: " + version;
     infoBox.innerHTML = infoStr;
 
     infoBox.style.backgroundColor = "#C6DEA6";
+}
+
+function getMotion() {
+    navigator.accelerometer.getCurrentAcceleration(getAccelerometer, accelerometerError);
+}
+
+function getAccelerometer(acceleration) {
+    var innerText = "X: " + acceleration.x + "<br/>Y: " + acceleration.y;
+    innerText += "<br/>Z: " + acceleration.z + "<br/>Timestamp: " + acceleration.timestamp;
+    accelBox.innerHTML = innerText;
+}
+
+function accelerometerError() {
+    accelBox.innerHTML = "Couldn't get position data";
 }
 
 getInfoButton.addEventListener("click", vibrateOnClick, false);

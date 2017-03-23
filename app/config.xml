@@ -24,4 +24,5 @@
 
     <plugin name="org.apache.cordova.vibration" spec="https://github.com/apache/cordova-plugin-vibration.git"/>
     <plugin name="org.apache.cordova.device" spec="https://github.com/apache/cordova-plugin-device.git"/>
+    <plugin name="org.apache.cordova.motion" spec="https://github.com/apache/cordova-plugin-device-motion.git"/>
 </widget>

@@ -68,3 +68,12 @@ div {
   background-color: #CAE6F8;
   color: #6F3234;
 }
+
+h3 {
+  color: #275DAD;
+  margin-bottom: 0.2vh;
+}
+
+#accel-info {
+  margin-top: 0;
+}

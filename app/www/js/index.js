@@ -26,10 +26,12 @@ function vibrateOnClick(e) {
 }
 
 function getMotion() {
+    accelBox.innerHTML = "stage 1";
     navigator.accelerometer.getCurrentAcceleration(getAccelerometer, accelerometerError);
 }
 
 function getAccelerometer(acceleration) {
+    accelBox.innerHTML = "stage 2";
     var innerText = "X: " + acceleration.x + "<br/>Y: " + acceleration.y;
     innerText += "<br/>Z: " + acceleration.z + "<br/>Timestamp: " + acceleration.timestamp;
     accelBox.innerHTML = innerText;

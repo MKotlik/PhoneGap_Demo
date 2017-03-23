@@ -1,12 +1,27 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.phonegap.helloworld" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
-    <name>demoApp</name>
+<widget id="com.callmemaybe.demo"
+        version="1.0.0"
+        xmlns="http://www.w3.org/ns/widgets"
+        xmlns:gap="http://phonegap.com/ns/1.0">
+
+    <name>PhoneGap demo</name>
+
     <description>
-        A blank PhoneGap app.
+        A PhoneGap demo app for Stuy's SoftDev class.
     </description>
-    <author email="support@phonegap.com" href="http://phonegap.com">
-        PhoneGap Team
+
+    <author email="mikekotlik@gmail.com" href="http://github.com/MKotlik">
+        Call_Me_Maybe
     </author>
+
+    <platform name="android">
+        <icon src="icon.png" width="128" height="128"/>
+    </platform>
+
     <content src="index.html" />
+
     <access origin="*" />
+
+    <plugin name="org.apache.cordova.vibration" spec="https://github.com/apache/cordova-plugin-vibration.git"/>
+    <plugin name="org.apache.cordova.device" spec="https://github.com/apache/cordova-plugin-device.git"/>
 </widget>
